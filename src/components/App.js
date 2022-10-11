@@ -68,6 +68,15 @@ const App = () => {
 
   }
 
+  function alert1(message)
+  {
+
+   let elementID= document.getElementById("error");
+    elementID.innerText=message;
+
+
+
+  }
 
   const submitForm=(event)=> 
   {
@@ -79,21 +88,21 @@ const App = () => {
     || !document.getElementById("gender").value || !document.getElementById("phoneNumber").value
     || !document.getElementById("password").value   )
     {
-       alert("All fields are mandatory");
+       alert1("All fields are mandatory");
        return;
     }
 
     if(!isAlphNumeric(document.getElementById("name").value))
     {
 
-      alert("Name is not alphanumeric");
+      alert1("Name is not alphanumeric");
       return;
     }
 
     if(!isEmail(document.getElementById("email").value))
     {
 
-      alert("Email must contain @");
+      alert1("Email must contain @");
       return;
     }
 
@@ -101,7 +110,7 @@ const App = () => {
     if(!isNumeric(document.getElementById("phoneNumber").value))
     {
 
-      alert("Phone Number must contain only numbers");
+      alert1("Phone Number must contain only numbers");
       return;
     }
 
@@ -109,7 +118,7 @@ const App = () => {
     if(document.getElementById("password").value.length< 6)
     {
 
-      alert("Password must contain atleast 6 letters");
+      alert1("Password must contain atleast 6 letters");
       return;
     }
 
@@ -119,6 +128,7 @@ const App = () => {
 
     //console.log(xname);
 
+    alert1("");
 
     alert("Hello " +xname);
 
@@ -155,6 +165,8 @@ const App = () => {
         <br/>
         Password :
         <input  id='password'  type="password" data-testid = 'password' />
+        <br/>
+        <div id="error" ></div>
         <br/>
          <button type="Submit" data-testid = 'submit' onClick={submitForm}> Submit </button>
 
