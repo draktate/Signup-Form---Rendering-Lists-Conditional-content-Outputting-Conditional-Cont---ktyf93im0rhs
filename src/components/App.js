@@ -128,8 +128,6 @@ const App = () => {
 
     //console.log(xname);
 
-    alert1("");
-
     alert("Hello " +xname);
 
 
@@ -138,7 +136,7 @@ const App = () => {
 
 
   return (
-    <div id="main">
+      <div id="main">
       <form >
         <label>
           Name:
@@ -174,6 +172,7 @@ const App = () => {
          </form>      
     </div>
   )
+
 }
 
 
